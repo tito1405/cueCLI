@@ -1,0 +1,39 @@
+# Development files
+test/
+.github/
+.eslintrc.json
+.prettierrc
+CONTRIBUTING.md
+
+# Source control
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/
+
+# Config files that shouldn't be published
+.env
+.env.local
+
+# Documentation source files
+docs/
+
+# Examples (if we add them later)
+examples/
