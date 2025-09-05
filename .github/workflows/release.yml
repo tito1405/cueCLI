@@ -40,4 +40,4 @@ jobs:
         prerelease: false
         body: |
           ## Changes
-          See [CHANGELOG.md](https://github.com/cuecli/cuecli/blob/main/CHANGELOG.md) for details.
+          See [CHANGELOG.md](https://github.com/cuecli/cueCLI/blob/main/CHANGELOG.md) for details.

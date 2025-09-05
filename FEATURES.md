@@ -149,4 +149,4 @@ Your support and feedback drive the evolution of cueCLI. If you find it useful, 
 
 ## Feature Requests
 
-To request a new feature, please [open an issue](https://github.com/cuecli/cuecli/issues) on GitHub.
+To request a new feature, please [open an issue](https://github.com/cuecli/cueCLI/issues) on GitHub.
