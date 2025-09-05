@@ -303,4 +303,5 @@ Built with:
 
 ---
 
-**Star this repo** if you find it helpful!
+✨ **Enjoy cueCLI!** It's been crafted with care to make your AI workflow smoother.  
+If it's helped you, **star this repo** and share it with others!
