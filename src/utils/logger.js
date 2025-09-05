@@ -1,7 +1,6 @@
 import chalk from 'chalk';
 import fs from 'fs-extra';
 import path from 'path';
-import os from 'os';
 
 // Log levels
 const LogLevel = {
@@ -80,29 +79,29 @@ export class Logger {
     let levelStr, messageStr;
     
     switch (level) {
-      case LogLevel.ERROR:
-        levelStr = chalk.red('ERROR');
-        messageStr = chalk.red(message);
-        break;
-      case LogLevel.WARN:
-        levelStr = chalk.yellow('WARN');
-        messageStr = chalk.yellow(message);
-        break;
-      case LogLevel.INFO:
-        levelStr = chalk.green('INFO');
-        messageStr = chalk.white(message);
-        break;
-      case LogLevel.DEBUG:
-        levelStr = chalk.blue('DEBUG');
-        messageStr = chalk.gray(message);
-        break;
-      case LogLevel.TRACE:
-        levelStr = chalk.magenta('TRACE');
-        messageStr = chalk.gray(message);
-        break;
-      default:
-        levelStr = 'LOG';
-        messageStr = message;
+    case LogLevel.ERROR:
+      levelStr = chalk.red('ERROR');
+      messageStr = chalk.red(message);
+      break;
+    case LogLevel.WARN:
+      levelStr = chalk.yellow('WARN');
+      messageStr = chalk.yellow(message);
+      break;
+    case LogLevel.INFO:
+      levelStr = chalk.green('INFO');
+      messageStr = chalk.white(message);
+      break;
+    case LogLevel.DEBUG:
+      levelStr = chalk.blue('DEBUG');
+      messageStr = chalk.gray(message);
+      break;
+    case LogLevel.TRACE:
+      levelStr = chalk.magenta('TRACE');
+      messageStr = chalk.gray(message);
+      break;
+    default:
+      levelStr = 'LOG';
+      messageStr = message;
     }
 
     const dataStr = data ? chalk.gray(` ${JSON.stringify(data)}`) : '';
@@ -123,16 +122,16 @@ export class Logger {
     this.log(LogLevel.INFO, message, data);
   }
 
-  debug(message, data) {
-    this.log(LogLevel.DEBUG, message, data);
+  debug(message, _data) {
+    this.log(LogLevel.DEBUG, message, _data);
   }
 
-  trace(message, data) {
-    this.log(LogLevel.TRACE, message, data);
+  trace(message, _data) {
+    this.log(LogLevel.TRACE, message, _data);
   }
 
   // Success message (special case)
-  success(message, data) {
+  success(message, _data) {
     const timestamp = this.timestamps ? chalk.gray(`[${this.getTimestamp()}] `) : '';
     const output = `${timestamp}${chalk.green('✓')} ${chalk.white(message)}`;
     console.log(output);
@@ -142,7 +141,7 @@ export class Logger {
   }
 
   // Failure message (special case)
-  failure(message, data) {
+  failure(message, _data) {
     const timestamp = this.timestamps ? chalk.gray(`[${this.getTimestamp()}] `) : '';
     const output = `${timestamp}${chalk.red('✗')} ${chalk.red(message)}`;
     console.log(output);

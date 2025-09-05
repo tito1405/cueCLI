@@ -1,11 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path';
 import os from 'os';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // Configuration class for managing cueCli settings
 export class Config {
@@ -115,7 +110,7 @@ export class Config {
     const merged = { ...defaults };
     
     for (const key in overrides) {
-      if (overrides.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(overrides, key)) {
         if (typeof overrides[key] === 'object' && !Array.isArray(overrides[key]) && overrides[key] !== null) {
           merged[key] = this.mergeConfig(defaults[key] || {}, overrides[key]);
         } else {

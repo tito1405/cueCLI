@@ -52,7 +52,7 @@ git clone https://github.com/your-username/cuecli.git
 cd cuecli
 
 # Add upstream remote
-git remote add upstream https://github.com/alexkisin/cuecli.git
+git remote add upstream https://github.com/cuecli/cuecli.git
 
 # Install dependencies
 npm install

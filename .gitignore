@@ -8,3 +8,14 @@ build/
 coverage/
 .vscode/
 .idea/
+
+# Internal documentation - not for public
+cuecli_todo.md
+*_todo.md
+TODO_INTERNAL.md
+
+# Environment variables with tokens
+.env.local
+.env.*.local
+.vercel
+*.tgz

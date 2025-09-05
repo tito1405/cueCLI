@@ -4,6 +4,7 @@ import readline from 'readline';
 import storage from '../storage/local.js';
 import { readFromClipboard } from '../utils/clipboard.js';
 import { extractVariables } from '../utils/template.js';
+import executor from '../core/executor.js';
 
 export async function addCommand(name, options) {
   try {
@@ -62,22 +63,15 @@ export async function addCommand(name, options) {
     };
 
     // Save the prompt
-    const saved = storage.setPrompt(name, promptData);
+    storage.setPrompt(name, promptData);
     
-    console.log(chalk.green('✓'), chalk.white(`Prompt '${name}' saved successfully`));
-    
-    // Show prompt details
-    if (saved.tags && saved.tags.length > 0) {
-      console.log(chalk.gray('  Tags:'), saved.tags.join(', '));
-    }
-    if (saved.variables && saved.variables.length > 0) {
-      console.log(chalk.gray('  Variables detected:'), saved.variables.join(', '));
-    }
-    console.log(chalk.gray(`  Version: ${saved.version}`));
-    console.log(chalk.gray(`  Size: ${content.length} characters`));
-    
-    // Usage hint
-    console.log(chalk.gray(`\nUse \`cuecli get ${name}\` to copy this prompt to clipboard`));
+    // Present the new prompt for execution
+    // After creating a prompt, you likely want to execute it
+    await executor.present(name, content, {
+      action: 'created',
+      source: options.fromFile ? 'file' : options.fromClipboard ? 'clipboard' : 'stdin',
+      modified: false
+    });
   } catch (error) {
     console.error(chalk.red('Error:'), error.message);
     process.exit(1);
@@ -85,7 +79,7 @@ export async function addCommand(name, options) {
 }
 
 function readFromStdin() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve, _reject) => {
     let content = '';
     const rl = readline.createInterface({
       input: process.stdin,
@@ -93,7 +87,7 @@ function readFromStdin() {
       terminal: false
     });
 
-    rl.on('line', (line) => {
+    rl.on('line', line => {
       content += line + '\n';
     });
 

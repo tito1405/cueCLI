@@ -2,9 +2,9 @@ import fs from 'fs-extra';
 import path from 'path';
 import os from 'os';
 
-const CONFIG_DIR = path.join(os.homedir(), '.cuecli');
-const PROMPTS_FILE = path.join(CONFIG_DIR, 'prompts.json');
-const BACKUP_DIR = path.join(CONFIG_DIR, 'backups');
+const getConfigDir = () => process.env.CUECLI_CONFIG_DIR || path.join(os.homedir(), '.cuecli');
+const getPromptsFile = () => path.join(getConfigDir(), 'prompts.json');
+const getBackupDir = () => path.join(getConfigDir(), 'backups');
 
 export class LocalStorage {
   constructor() {
@@ -12,11 +12,11 @@ export class LocalStorage {
   }
 
   ensureConfigDir() {
-    fs.ensureDirSync(CONFIG_DIR);
-    fs.ensureDirSync(BACKUP_DIR);
+    fs.ensureDirSync(getConfigDir());
+    fs.ensureDirSync(getBackupDir());
     
     // Initialize prompts file if it doesn't exist
-    if (!fs.existsSync(PROMPTS_FILE)) {
+    if (!fs.existsSync(getPromptsFile())) {
       this.initializeStorage();
     }
   }
@@ -31,17 +31,17 @@ export class LocalStorage {
         createdAt: new Date().toISOString()
       }
     };
-    fs.writeJsonSync(PROMPTS_FILE, initialData, { spaces: 2 });
+    fs.writeJsonSync(getPromptsFile(), initialData, { spaces: 2 });
   }
 
   // Read all data
   read() {
     try {
-      return fs.readJsonSync(PROMPTS_FILE);
+      return fs.readJsonSync(getPromptsFile());
     } catch (error) {
       console.error('Error reading prompts file:', error.message);
       this.initializeStorage();
-      return fs.readJsonSync(PROMPTS_FILE);
+      return fs.readJsonSync(getPromptsFile());
     }
   }
 
@@ -49,7 +49,7 @@ export class LocalStorage {
   write(data) {
     // Create backup before writing
     this.createBackup();
-    fs.writeJsonSync(PROMPTS_FILE, data, { spaces: 2 });
+    fs.writeJsonSync(getPromptsFile(), data, { spaces: 2 });
   }
 
   // Get all prompts
@@ -121,8 +121,8 @@ export class LocalStorage {
   createBackup() {
     try {
       const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-      const backupFile = path.join(BACKUP_DIR, `prompts-${timestamp}.json`);
-      fs.copySync(PROMPTS_FILE, backupFile);
+      const backupFile = path.join(getBackupDir(), `prompts-${timestamp}.json`);
+      fs.copySync(getPromptsFile(), backupFile);
       
       // Keep only last 10 backups
       this.cleanupBackups();
@@ -134,12 +134,12 @@ export class LocalStorage {
   // Cleanup old backups
   cleanupBackups() {
     try {
-      const files = fs.readdirSync(BACKUP_DIR)
+      const files = fs.readdirSync(getBackupDir())
         .filter(f => f.startsWith('prompts-') && f.endsWith('.json'))
         .map(f => ({
           name: f,
-          path: path.join(BACKUP_DIR, f),
-          time: fs.statSync(path.join(BACKUP_DIR, f)).mtime
+          path: path.join(getBackupDir(), f),
+          time: fs.statSync(path.join(getBackupDir(), f)).mtime
         }))
         .sort((a, b) => b.time - a.time);
 

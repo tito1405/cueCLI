@@ -24,9 +24,6 @@ jobs:
     - name: Run tests
       run: npm test
     
-    - name: Build
-      run: npm run build --if-present
-    
     - name: Publish to npm
       run: npm publish
       env:
@@ -43,4 +40,4 @@ jobs:
         prerelease: false
         body: |
           ## Changes
-          See [CHANGELOG.md](https://github.com/alexkisin/cuecli/blob/main/CHANGELOG.md) for details.
+          See [CHANGELOG.md](https://github.com/cuecli/cuecli/blob/main/CHANGELOG.md) for details.

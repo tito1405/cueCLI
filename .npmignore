@@ -37,3 +37,26 @@ docs/
 
 # Examples (if we add them later)
 examples/
+
+# Website (separate repository)
+website/
+
+# Internal planning documents
+cuecli_todo.md
+CueCLI_TODO.md
+LAUNCH_CHECKLIST.md
+README_POLISHED.md
+LINK_SECURITY_AUDIT.md
+FEATURES.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# IDE specific
+.claude/
+
+# Deployment configs
+vercel.json
+.vercel/
+
+# GitHub specific
+.github/

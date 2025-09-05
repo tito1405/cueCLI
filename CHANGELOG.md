@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - No hardcoded secrets or API keys
 - Secure storage in user home directory
 
-## [0.1.0] - 2024-09-01
+## [0.1.0] - 2025-01-04
 
 ### Added
 - Initial release
